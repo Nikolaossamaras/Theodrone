@@ -4,11 +4,11 @@
 
 ## What is it
 
-A basic drone frame designed so it can later be equipped with a thermal or a normal camera, for recording and checking the situation in forests to help catch fires early. It does not currently include a camera — the frame and build are designed with that use case in mind for a future addition.
+A basic drone , with a controller to controll it , 4 motor for the fans and a original frame made by me
 
 ## Why I built it
 
-Where I live, forest fires are common in the summer. The idea is that once a camera is added, this drone could be used to check the situation in a forest area.
+At first i wanted to make a thermal drone , but after looking at the prices for thermal cameras and displays i realised that making a basic drone first is much better as i haven't ever made a drone
 
 ## Contents
 
