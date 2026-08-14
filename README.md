@@ -15,6 +15,10 @@ At first i wanted to make a thermal drone , but after looking at the prices for 
 - **BOM + Wiring diagram** — bill of materials and wiring reference for the build
 - **Cad** — CAD files for the frame
 
+## Wiring Diagram
+<img width="364" height="341" alt="image" src="https://github.com/user-attachments/assets/369f17bf-7c8d-4368-9673-cca8e7313a56" />
+
+
 ## License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
