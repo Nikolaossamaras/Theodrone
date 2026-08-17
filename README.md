@@ -24,10 +24,6 @@ The ESP32 is the main controller. It reads orientation data from the MPU-6050 ov
 
 The board design is done and the Gerbers are ready to send to a fab. A few nets on the current revision aren't routed and are being connected by hand with jumper wires after assembly rather than in copper — this is noted so it's clear the board as fabricated isn't 100% routed on its own. The exact ESP32-WROOM-32 module variant should be double-checked against the footprint in the schematic before ordering parts, since some variants (particularly -32U) use a different antenna setup and won't fit.
 
-## Wiring diagram
-
-<img width="364" height="341" alt="image" src="https://github.com/user-attachments/assets/369f17bf-7c8d-4368-9673-cca8e7313a56" />
-
 ## Building it
 
 1. Order the bare PCB using the Gerber files in `pcb_files/`.
