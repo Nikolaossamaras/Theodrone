@@ -1,23 +1,40 @@
 # Theodrone
 
-> Theodrone is a small drone, roughly 130mm x 130mm x 30mm.
+Theodrone is a small quadcopter I'm building myself, roughly 130mm x 130mm x 30mm. It's my first drone project.
 
-## What is it
+## What it is
 
-A basic drone , with a controller to controll it , 4 motor for the fans and a original frame made by me
+A basic quadcopter — 4 motors, a custom frame I designed and printed myself, and a custom PCB that handles power, charging, and motor control. The board is built around an ESP32-WROOM-32, an MPU-6050 for orientation sensing, a TP4056 for LiPo charging, and a CH340C for USB communication with the ESP32 during flashing/debugging.
 
 ## Why I built it
 
-At first i wanted to make a thermal drone , but after looking at the prices for thermal cameras and displays i realised that making a basic drone first is much better as i haven't ever made a drone
+I originally wanted to build a thermal drone, but after looking at the cost of thermal cameras and displays, I decided to start with a basic drone first, since I'd never built one before. This project is meant to get the fundamentals down — frame, power system, motor control, sensing — before adding anything more complicated.
 
-## Contents
+## How it works
 
-- **BOM + Wiring diagram** — bill of materials and wiring reference for the build
-- **Cad** — CAD files for the frame
+The ESP32 is the main controller. It reads orientation data from the MPU-6050 over I2C and controls each motor through its own low-side NMOS switch (AO3400A), one per motor, so each motor circuit can be enabled or disabled independently by a GPIO pin. Power comes from a single-cell LiPo battery, charged through the TP4056 over USB-C. The CH340C provides a USB-to-serial bridge so the board can be flashed and debugged over the same USB-C port.
 
-## Wiring Diagram
+## Repo contents
+
+- **Cad/** — Fusion 360 frame design (`drone.f3z`)
+- **pcb_files/** — KiCad project files, schematic, Gerbers, and the component placement/position file
+- **dronev2_BOM.csv** — bill of materials with footprints and part numbers for ordering components
+
+## Current status
+
+The board design is done and the Gerbers are ready to send to a fab. A few nets on the current revision aren't routed and are being connected by hand with jumper wires after assembly rather than in copper — this is noted so it's clear the board as fabricated isn't 100% routed on its own. The exact ESP32-WROOM-32 module variant should be double-checked against the footprint in the schematic before ordering parts, since some variants (particularly -32U) use a different antenna setup and won't fit.
+
+## Wiring diagram
+
 <img width="364" height="341" alt="image" src="https://github.com/user-attachments/assets/369f17bf-7c8d-4368-9673-cca8e7313a56" />
 
+## Building it
+
+1. Order the bare PCB using the Gerber files in `pcb_files/`.
+2. Buy the components listed in `dronev2_BOM.csv`.
+3. Hand-solder the board — most parts are fine with a regular soldering iron, but the ESP32 module and the MPU-6050 (QFN package) are much easier with solder paste and a hot air rework tool, since their pads aren't accessible from the side.
+4. Add the manual jumper wires for the unrouted nets mentioned above.
+5. Check continuity with a multimeter before powering it on for the first time.
 
 ## License
 
