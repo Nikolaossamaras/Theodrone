@@ -31,6 +31,11 @@ The board design is done and the Gerbers are ready to send to a fab. A few nets 
 3. Hand-solder the board — most parts are fine with a regular soldering iron, but the ESP32 module and the MPU-6050 (QFN package) are much easier with solder paste and a hot air rework tool, since their pads aren't accessible from the side.
 4. Add the manual jumper wires for the unrouted nets mentioned above.
 5. Check continuity with a multimeter before powering it on for the first time.
+## Schematic 
+<img width="1139" height="775" alt="Screenshot 2026-08-18 190407" src="https://github.com/user-attachments/assets/afeee9d9-ad4a-46eb-a4da-45cfe7c571a0" />
+
+## PCB Preview
+<img width="813" height="756" alt="image" src="https://github.com/user-attachments/assets/3e815508-b930-491d-a348-8a3f3f4e2c00" />
 
 ## License
 
