@@ -1,42 +1,20 @@
 # Theodrone
+>it's a budget drone rougly 130*130 mm
 
-Theodrone is a small quadcopter I'm building myself, roughly 130mm x 130mm x 30mm. It's my first drone project.
+## What is it
+it's a drone that i made the frame of it , the pcb all by myself. First i wanted to make this a rescue drone but it was expensive and a lot harder that i though as i wanted to mount a thermal camera that can rotate but also keeping it small and easy to control. I think i overestimated my powers as this is only my second time working with pcbs and it was pretty rough and probably wont work as well as i though , regardless i finished designing this drone despite the difficulties.
 
-## What it is
+## Why i built it
+Originallt my idea was to make a rescue drone as in my Country there are a lot of wild fires especially in summer , to be specific there was a big fire near my City and it almost burned it down , but still there were a lot of damages . That's why i decided on that idea , but i didn't realise how hard it would be for me so i decided to step down and first make a flying drone by myself .
 
-A basic quadcopter — 4 motors, a custom frame I designed and printed myself, and a custom PCB that handles power, charging, and motor control. The board is built around an ESP32-WROOM-32, an MPU-6050 for orientation sensing, a TP4056 for LiPo charging, and a CH340C for USB communication with the ESP32 during flashing/debugging.
+## Schematic 
+<img width="1139" height="775" alt="Screenshot 2026-08-18 190407" src="https://github.com/user-attachments/assets/32be2392-d02d-4083-b4a7-1448089cbfce" />
 
-## Why I built it
-
-I originally wanted to build a thermal drone, but after looking at the cost of thermal cameras and displays, I decided to start with a basic drone first, since I'd never built one before. This project is meant to get the fundamentals down — frame, power system, motor control, sensing — before adding anything more complicated.
-
-## How it works
-
-The ESP32 is the main controller. It reads orientation data from the MPU-6050 over I2C and controls each motor through its own low-side NMOS switch (AO3400A), one per motor, so each motor circuit can be enabled or disabled independently by a GPIO pin. Power comes from a single-cell LiPo battery, charged through the TP4056 over USB-C. The CH340C provides a USB-to-serial bridge so the board can be flashed and debugged over the same USB-C port.
-
-## Repo contents
-
-- **Cad/** — Fusion 360 frame design (`drone.f3z`)
-- **pcb_files/** — KiCad project files, schematic, Gerbers, and the component placement/position file
-- **dronev2_BOM.csv** — bill of materials with footprints and part numbers for ordering components
+## PCB preview 
+<img width="813" height="756" alt="Screenshot 2026-08-18 190557" src="https://github.com/user-attachments/assets/60c9fa29-1f89-4308-bf2e-498e198fa955" />
+this is my pcb and to be fair i am not very confident about it as i had a hard time and did some things wrong and maybe not efficient i hope though that i would be able to make a better version of it in the near future.
 
 ## Current status
 
-The board design is done and the Gerbers are ready to send to a fab. A few nets on the current revision aren't routed and are being connected by hand with jumper wires after assembly rather than in copper — this is noted so it's clear the board as fabricated isn't 100% routed on its own. The exact ESP32-WROOM-32 module variant should be double-checked against the footprint in the schematic before ordering parts, since some variants (particularly -32U) use a different antenna setup and won't fit.
-
-## Building it
-
-1. Order the bare PCB using the Gerber files in `pcb_files/`.
-2. Buy the components listed in `dronev2_BOM.csv`.
-3. Hand-solder the board — most parts are fine with a regular soldering iron, but the ESP32 module and the MPU-6050 (QFN package) are much easier with solder paste and a hot air rework tool, since their pads aren't accessible from the side.
-4. Add the manual jumper wires for the unrouted nets mentioned above.
-5. Check continuity with a multimeter before powering it on for the first time.
-## Schematic 
-<img width="1139" height="775" alt="Screenshot 2026-08-18 190407" src="https://github.com/user-attachments/assets/afeee9d9-ad4a-46eb-a4da-45cfe7c571a0" />
-
-## PCB Preview
-<img width="813" height="756" alt="image" src="https://github.com/user-attachments/assets/3e815508-b930-491d-a348-8a3f3f4e2c00" />
-
-## License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+### IT'S still in the prototype level!!!!
+The board design is done(almost, for the prototype yeah) and the Gerbers are ready for manifacture. A few motor nets on the current version of the pcb aren't routed and are being connected by hand with jumper wires after assembly rather than in copper , because i would need to redesign the whole board if i needed to do that and because it's still a prototype i though it would be better just to connected them with wires for testing and then make the adjustments on the real pcb.
