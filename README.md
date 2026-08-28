@@ -14,6 +14,11 @@ Originallt my idea was to make a rescue drone as in my Country there are a lot o
 <img width="813" height="756" alt="Screenshot 2026-08-18 190557" src="https://github.com/user-attachments/assets/60c9fa29-1f89-4308-bf2e-498e198fa955" />
 this is my pcb and to be fair i am not very confident about it as i had a hard time and did some things wrong and maybe not efficient i hope though that i would be able to make a better version of it in the near future.
 
+## Assembly preview
+<img width="569" height="295" alt="image" src="https://github.com/user-attachments/assets/be4540fb-d89f-4e35-91d7-a5131d56e1b7" />
+
+> didn't find .step files for the motors nor for the battery
+
 ## Current status
 
 ### IT'S still in the prototype level!!!!
